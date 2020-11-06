@@ -13,4 +13,15 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
+
+  it('returns a null description for an invalid breed, via callback', (done) => {
+    fetchBreedDescription('BlahBlah', (err, desc) => {
+      
+      assert.equal('test', err);
+
+      assert.equal(null, desc);
+
+      done();
+    })
+  });
 });
